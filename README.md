@@ -1,4 +1,4 @@
-# new-vue-app
+# Wellness Application
 
 ## Project setup
 ```
