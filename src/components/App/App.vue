@@ -1,15 +1,20 @@
+<style scoped lang="scss" >
+@import "../../assets/scss/variables.scss";
+@import "App.scss";
+</style>
 <template>
   <v-app>
-    <v-app-bar app color="secondary" dark>
-      <div class="d-flex align-center">
-        <span class="text-center">My Fitness App</span>
-      </div>
-      <v-spacer></v-spacer>
-      <span>{{ loggedInUserName }}</span>
+    <v-app-bar app color="primary" dark>
+      <router-link to="/" tag="span"
+        ><span class="c-p header-text">Wellness App</span></router-link
+      >
     </v-app-bar>
-
     <v-main>
-      <PatientList />
+      <v-container class="px-0" fluid>
+        <v-col md="12" lg="6" xl="6" sm="12" class="ma-auto">
+          <Survey />
+        </v-col>
+      </v-container>
     </v-main>
   </v-app>
 </template>

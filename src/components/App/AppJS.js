@@ -1,16 +1,17 @@
-
-import PatientList from "../PatientList/PatientList";
+import Survey from "../survey-component/Survey"
 
 export default {
+    computed: {
+    },
     components: {
-        PatientList,
+        Survey
     },
     methods: {
-        change: (value) => {
-            console.log("changed ", value);
-        },
     },
     data: () => ({
-        loggedInUserName: "Tibin Dominic"
     }),
+
+    /* Lifecycle methods */
+    created: function () {
+    }
 };
