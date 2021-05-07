@@ -6,7 +6,7 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <router-link to="/" tag="span"
-        ><span class="c-p header-text">Wellness App</span></router-link
+        ><span class="c-p header-text">Wellness Application</span></router-link
       >
     </v-app-bar>
     <v-main>
