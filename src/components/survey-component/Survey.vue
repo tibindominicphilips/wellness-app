@@ -42,14 +42,14 @@
               elevation="2"
               color="primary"
               @click="loadNextQn()"
-              :disabled="isValid()"
+              :disabled="!this.categories[this.selectedQnIndex].isValid"
               v-if="selectedQnIndex !== categories.length - 1"
               >Next</v-btn
             >
             <v-btn
               class="mx-2"
               elevation="2"
-              :disabled="isValid()"
+              :disabled="!this.categories[this.selectedQnIndex].isValid"
               color="primary"
               @click="submit()"
               v-if="selectedQnIndex == categories.length - 1"
@@ -58,16 +58,11 @@
           </div>
         </v-form>
       </div>
-      <!-- <div class="pa-5">
-        Question {{ selectedQnIndex + 1 }} of {{ questions.length }}
-      </div> -->
+      <v-progress-linear
+        class="fixedBottom"
+        v-bind:value="getProgress()"
+      ></v-progress-linear>
     </v-card>
-    <!-- <div class="mt-3">
-      <h3>Answers</h3>
-      <div v-for="(qn, index) in questions" :key="index">
-        <b>Qn no {{ index + 1 }}:&nbsp;</b>{{ qn.answer }}
-      </div>
-    </div> -->
     <div style="height: 100vh"></div>
   </div>
 </template>

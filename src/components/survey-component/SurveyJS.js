@@ -16,11 +16,17 @@ export default {
                 easing: 'linear',
             }
         },
-        isValid: function () {
+        validateCategory: function () {
             const index = this.categories[this.selectedQnIndex].questions.findIndex(question => question.answer === undefined);
-            return index === -1 ? false : true;
+            this.categories[this.selectedQnIndex].isValid = index === -1 ? true : false;
+        },
+        getProgress: function () {
+            const validCategoryCount = this.categories.reduce((count, category) => (category.isValid === true ? count + 1 : count), 0);
+            console.log("progress: ", validCategoryCount);
+            return (validCategoryCount / this.categories.length) * 100
         },
         change: function (index) {
+            this.validateCategory()
             goTo("#qn" + this.selectedQnIndex + (index + 1), this.scrollOption())
         },
         loadNextQn: function () {
