@@ -29,7 +29,7 @@
               ></v-radio>
             </v-radio-group>
           </div>
-          <div class="text-center mt-5">
+          <div class="text-center mt-5 actionButtonGroup">
             <v-btn
               elevation="2"
               color="primary"
