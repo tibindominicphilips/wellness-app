@@ -1,4 +1,4 @@
-<style scoped lang="scss" >
+<style lang="scss" >
 @import "../../assets/scss/variables.scss";
 @import "./Survey.scss";
 </style>
@@ -6,18 +6,20 @@
   <div>
     <v-card elevation="2" class="ma-auto">
       <div class="pa-5">
-        <h1 class="font-weight-medium mb-5">
+        <h1 class="font-weight-medium mb-10 mt-5">
           {{ categories[selectedQnIndex].name }}
         </h1>
         <v-form>
           <div
-            v-for="question in categories[selectedQnIndex].questions"
+            v-for="(question, index) in categories[selectedQnIndex].questions"
             :key="question.id"
+            v-bind:id="'qn' + selectedQnIndex + index"
           >
             <v-radio-group
+              class="questions"
               v-bind:label="question.question"
               v-model="question.answer"
-              @change="change()"
+              @change="change(index)"
             >
               <v-radio
                 v-for="option in options"
@@ -40,12 +42,14 @@
               elevation="2"
               color="primary"
               @click="loadNextQn()"
+              :disabled="isValid()"
               v-if="selectedQnIndex !== categories.length - 1"
               >Next</v-btn
             >
             <v-btn
               class="mx-2"
               elevation="2"
+              :disabled="isValid()"
               color="primary"
               @click="submit()"
               v-if="selectedQnIndex == categories.length - 1"
@@ -64,6 +68,7 @@
         <b>Qn no {{ index + 1 }}:&nbsp;</b>{{ qn.answer }}
       </div>
     </div> -->
+    <div style="height: 100vh"></div>
   </div>
 </template>
 <script src="./SurveyJS.js">
