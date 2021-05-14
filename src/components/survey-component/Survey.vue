@@ -60,10 +60,10 @@
           </div>
         </v-form>
       </div>
-      <v-progress-linear
-        class="fixedBottom"
-        v-bind:value="getProgress()"
-      ></v-progress-linear>
+      <div class="progressbar">
+        <v-progress-linear v-bind:value="getProgress()"></v-progress-linear>
+        <div style="clear: both"></div>
+      </div>
     </v-card>
     <div style="height: 100vh"></div>
   </div>
