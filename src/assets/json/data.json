@@ -5,22 +5,18 @@
         "questions": [
             {
                 "id": 1,
-                "type": "radio",
                 "question": "I recognize when I am stressed and take steps to relax through exercise, quiet time, or other activities"
             },
             {
                 "id": 2,
-                "type": "radio",
                 "question": "I feel optimistic about the future / I am flexible and adapt or adjust to change in a positive way"
             },
             {
                 "id": 3,
-                "type": "radio",
                 "question": "I feel good about myself and believe others like me for who I am"
             },
             {
                 "id": 4,
-                "type": "radio",
                 "question": "I am interested in new things"
             }
         ]
@@ -31,22 +27,18 @@
         "questions": [
             {
                 "id": 5,
-                "type": "radio",
                 "question": "I engage in physical activities"
             },
             {
                 "id": 6,
-                "type": "radio",
                 "question": "I have proper diet and nutrition"
             },
             {
                 "id": 7,
-                "type": "radio",
                 "question": "I get 7-8 hours of sound sleep each night"
             },
             {
                 "id": 8,
-                "type": "radio",
                 "question": "I have lots of energy and can get through the day without being overly tired"
             }
         ]
@@ -57,17 +49,14 @@
         "questions": [
             {
                 "id": 9,
-                "type": "radio",
                 "question": "I get along well with the members of my family"
             },
             {
                 "id": 10,
-                "type": "radio",
                 "question": "I participate in a wide variety of social activities and enjoy being with people who are different than me"
             },
             {
                 "id": 11,
-                "type": "radio",
                 "question": "I consider the feelings of others and do not act in hurtful or selfish ways"
             }
         ]
@@ -78,17 +67,14 @@
         "questions": [
             {
                 "id": 12,
-                "type": "radio",
                 "question": "I take time to enjoy nature and the beauty around me"
             },
             {
                 "id": 13,
-                "type": "radio",
                 "question": "I take time alone to think about what's important in life - who I am, what I value, where I fit in, and where I'm going"
             },
             {
                 "id": 14,
-                "type": "radio",
                 "question": "I engage in acts of caring and good will without expecting something in return"
             }
         ]
@@ -99,17 +85,14 @@
         "questions": [
             {
                 "id": 15,
-                "type": "radio",
                 "question": "I tend to act impulsively without thinking about the consequences"
             },
             {
                 "id": 16,
-                "type": "radio",
                 "question": "I learn from my mistakes and try to act differently the next time"
             },
             {
                 "id": 17,
-                "type": "radio",
                 "question": "I manage my time well, rather than time managing me"
             }
         ]
