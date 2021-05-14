@@ -21,8 +21,8 @@ export default {
             this.categories[this.selectedCategoryIndex].isValid = (questionIndex === -1) ? true : false;
         },
         getProgress: function () {
-            const validCategoryCount = this.categories.reduce((count, category) => (category.isValid ? count + 1 : count), 0);
-            return (validCategoryCount / this.categories.length) * 100;
+            const validCategoriesCount = this.categories.reduce((count, category) => (category.isValid ? count + 1 : count), 0);
+            return (validCategoriesCount / this.categories.length) * 100;
         },
         change: function (questionIndex) {
             this.validateCategory();
