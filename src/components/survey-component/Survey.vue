@@ -7,19 +7,21 @@
     <v-card elevation="2" class="ma-auto">
       <div class="pa-5">
         <h1 class="font-weight-medium mb-10 mt-5">
-          {{ categories[selectedQnIndex].name }}
+          {{ categories[selectedCategoryIndex].name }}
         </h1>
         <v-form>
           <div
-            v-for="(question, index) in categories[selectedQnIndex].questions"
+            v-for="(question, questionIndex) in categories[
+              selectedCategoryIndex
+            ].questions"
             :key="question.id"
-            v-bind:id="'qn' + selectedQnIndex + index"
+            v-bind:id="'qn' + selectedCategoryIndex + questionIndex"
           >
             <v-radio-group
               class="questions"
               v-bind:label="question.question"
               v-model="question.answer"
-              @change="change(index)"
+              @change="change(questionIndex)"
             >
               <v-radio
                 v-for="option in options"
@@ -32,9 +34,9 @@
           <div class="text-center mt-5 actionButtonGroup">
             <v-btn
               elevation="2"
-              color="primary"
+              color="secondary"
               @click="loadPrevQn()"
-              v-if="selectedQnIndex !== 0"
+              v-if="selectedCategoryIndex !== 0"
               >Previous</v-btn
             >
             <v-btn
@@ -42,17 +44,17 @@
               elevation="2"
               color="primary"
               @click="loadNextQn()"
-              :disabled="!this.categories[this.selectedQnIndex].isValid"
-              v-if="selectedQnIndex !== categories.length - 1"
+              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
+              v-if="selectedCategoryIndex !== categories.length - 1"
               >Next</v-btn
             >
             <v-btn
               class="mx-2"
               elevation="2"
-              :disabled="!this.categories[this.selectedQnIndex].isValid"
+              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
               color="primary"
               @click="submit()"
-              v-if="selectedQnIndex == categories.length - 1"
+              v-if="selectedCategoryIndex == categories.length - 1"
               >Submit</v-btn
             >
           </div>
@@ -66,5 +68,5 @@
     <div style="height: 100vh"></div>
   </div>
 </template>
-<script src="./SurveyJS.js">
+<script src="./SurveyComponent.js">
 </script>
