@@ -4,10 +4,8 @@
 </style>
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <router-link to="/" tag="span"
-        ><span class="c-p header-text">Wellness Application</span></router-link
-      >
+    <v-app-bar app color="primary" dark
+      ><span class="c-p header-text">Wellness Application</span>
     </v-app-bar>
     <v-main>
       <v-container class="px-0" fluid>
