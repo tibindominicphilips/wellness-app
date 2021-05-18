@@ -1,82 +1,116 @@
 [
     {
-        "type": "radio",
-        "required": true,
-        "question": "How would you rate your diet and nutrition?",
-        "options": [
+        "id": 1,
+        "name": "Mental and Emotional",
+        "questions": [
             {
-                "label": "Terrible",
-                "value": -1
+                "id": 1,
+                "type": "radio",
+                "question": "I recognize when I am stressed and take steps to relax through exercise, quiet time, or other activities"
             },
             {
-                "label": "Poor",
-                "value": -2
+                "id": 2,
+                "type": "radio",
+                "question": "I feel optimistic about the future / I am flexible and adapt or adjust to change in a positive way"
             },
             {
-                "label": "Okay",
-                "value": 0
+                "id": 3,
+                "type": "radio",
+                "question": "I feel good about myself and believe others like me for who I am"
             },
             {
-                "label": "Good",
-                "value": 1
-            },
-            {
-                "label": "Great",
-                "value": 2
+                "id": 4,
+                "type": "radio",
+                "question": "I am interested in new things"
             }
         ]
     },
     {
-        "type": "radio",
-        "required": true,
-        "question": "How would you rate your level of physical activity?",
-        "options": [
+        "id": 2,
+        "name": "Physical",
+        "questions": [
             {
-                "label": "Terrible",
-                "value": -1
+                "id": 5,
+                "type": "radio",
+                "question": "I engage in physical activities"
             },
             {
-                "label": "Poor",
-                "value": -2
+                "id": 6,
+                "type": "radio",
+                "question": "I have proper diet and nutrition"
             },
             {
-                "label": "Okay",
-                "value": 0
+                "id": 7,
+                "type": "radio",
+                "question": "I get 7-8 hours of sound sleep each night"
             },
             {
-                "label": "Good",
-                "value": 1
-            },
-            {
-                "label": "Great",
-                "value": 2
+                "id": 8,
+                "type": "radio",
+                "question": "I have lots of energy and can get through the day without being overly tired"
             }
         ]
     },
     {
-        "type": "radio",
-        "required": true,
-        "question": "How would you rate your amount and quality of sleep?",
-        "options": [
+        "id": 3,
+        "name": "Social",
+        "questions": [
             {
-                "label": "Terrible",
-                "value": -1
+                "id": 9,
+                "type": "radio",
+                "question": "I get along well with the members of my family"
             },
             {
-                "label": "Poor",
-                "value": -2
+                "id": 10,
+                "type": "radio",
+                "question": "I participate in a wide variety of social activities and enjoy being with people who are different than me"
             },
             {
-                "label": "Okay",
-                "value": 0
+                "id": 11,
+                "type": "radio",
+                "question": "I consider the feelings of others and do not act in hurtful or selfish ways"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Spiritual",
+        "questions": [
+            {
+                "id": 12,
+                "type": "radio",
+                "question": "I take time to enjoy nature and the beauty around me"
             },
             {
-                "label": "Good",
-                "value": 1
+                "id": 13,
+                "type": "radio",
+                "question": "I take time alone to think about what's important in life - who I am, what I value, where I fit in, and where I'm going"
             },
             {
-                "label": "Great",
-                "value": 2
+                "id": 14,
+                "type": "radio",
+                "question": "I engage in acts of caring and good will without expecting something in return"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Intellectual Health",
+        "questions": [
+            {
+                "id": 15,
+                "type": "radio",
+                "question": "I tend to act impulsively without thinking about the consequences"
+            },
+            {
+                "id": 16,
+                "type": "radio",
+                "question": "I learn from my mistakes and try to act differently the next time"
+            },
+            {
+                "id": 17,
+                "type": "radio",
+                "question": "I manage my time well, rather than time managing me"
             }
         ]
     }

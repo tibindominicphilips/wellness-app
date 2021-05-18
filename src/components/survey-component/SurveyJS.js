@@ -16,13 +16,12 @@ export default {
             this.selectedQnIndex -= 1
         },
         submit: function () {
-            for (let index = 0; index < this.questions.length; index++) {
-                console.log(index + 1 + ':', this.questions[index].answer)
-            }
+            console.log(this.categories)
         }
     },
     data: () => ({
-        questions: require('../../assets/json/data.json'),
+        categories: require('../../assets/json/data.json'),
+        options: require('../../assets/json/options.json'),
         selectedQnIndex: 0
     }),
 
