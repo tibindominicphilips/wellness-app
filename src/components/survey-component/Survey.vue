@@ -31,7 +31,7 @@
               ></v-radio>
             </v-radio-group>
           </div>
-          <div class="text-center mt-5 actionButtonGroup">
+          <div class="text-center mt-5 pb-0 actionButtonGroup">
             <v-btn
               elevation="2"
               color="secondary"
@@ -57,13 +57,19 @@
               v-if="selectedCategoryIndex == categories.length - 1"
               >Submit</v-btn
             >
+            <div class="progressbar">
+              <v-progress-linear
+                v-bind:value="getProgress()"
+              ></v-progress-linear>
+              <div style="clear: both"></div>
+            </div>
           </div>
         </v-form>
       </div>
-      <div class="progressbar">
+      <!-- <div class="progressbar">
         <v-progress-linear v-bind:value="getProgress()"></v-progress-linear>
         <div style="clear: both"></div>
-      </div>
+      </div> -->
     </v-card>
     <div style="height: 100vh"></div>
   </div>
