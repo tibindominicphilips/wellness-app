@@ -14,6 +14,7 @@
           <v-text-field :rules="inputRules" 
             type="username"
             id="username"
+             v-model="name"
             label="User Name"
             solo
             class="form-input">
@@ -25,10 +26,12 @@
             @click:append="showPassword = !showPassword"  :rules="inputRulesp"
             id="username"
             label="Password" 
+             v-model="password"
             solo
             class="form-input">
           </v-text-field>
-          <v-btn depressed dark color="#1c2d66" large  :disabled="!isValid">
+          <p class="errorTextColor"> {{this.loginError}} </p>
+          <v-btn depressed dark color="#1c2d66" large  :disabled="!isValid" @click="submitForm">
             Log In
           </v-btn>              
         </v-form>
@@ -50,6 +53,9 @@
 export default {
   data: () => ({
         isValid: false,
+        name: '',
+        password: '',
+       loginError : '',
         footer: "Copyrights and all other proprietary rights in any software and related documentation (“Software”) made available to you rest exclusively with Philips or its licensors. No title or ownership in the Software is conferred to you. Use of the Software is subject to the end user license conditions as are available on request." ,
         appName: "WELLNESS APPLICATION",
         showPassword: false,
@@ -65,8 +71,17 @@ export default {
   computed: {
     
   },
+  
    methods: {
-       
+      submitForm(e) {
+        e.preventDefault();
+        if(this.password === '#Welcome123'){
+        sessionStorage.setItem("loggedInUser", this.name);
+         this.$router.replace('/home');
+         }else{
+           this.loginError = 'Please enter a valid password'
+         }
+      },  
     },
   
 };
@@ -92,6 +107,10 @@ export default {
     }
     .form-input >>> .error--text {
       color: #ffb640 !important;
+    }
+
+    .errorTextColor{
+       color: #ffb640 !important;
     }
 
 
