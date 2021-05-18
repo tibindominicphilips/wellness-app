@@ -4,12 +4,12 @@
 </style>
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <router-link to="/" tag="span"
-        ><span class="c-p header-text">Wellness Application</span></router-link
-      >
-         <v-spacer> </v-spacer>
-    <v-app-bar-title class="pr-5 text-center">{{ entered_name }}</v-app-bar-title>
+    <v-app-bar app color="primary" dark
+      ><span class="c-p header-text">Wellness Application</span>
+      <v-spacer> </v-spacer>
+      <v-app-bar-title class="pr-5 text-center">{{
+        entered_name
+      }}</v-app-bar-title>
     </v-app-bar>
     <v-main>
       <v-container class="px-0" fluid>
