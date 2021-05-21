@@ -1,5 +1,8 @@
-import updateQuestionnaire from "./questionnaireAction";
+import { updateQuestionnaire } from "./questionnaireAction";
+import { updateAppName, updateUserProfile } from "./appAction";
 
 export default {
-    updateQuestionnaire
+    updateQuestionnaire,
+    updateAppName,
+    updateUserProfile
 };

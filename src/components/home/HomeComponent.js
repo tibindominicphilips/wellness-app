@@ -1,10 +1,11 @@
 import Survey from "../survey-component/Survey"
+import { mapState } from "vuex";
 
 export default {
     computed: {
-       entered_name() {
-            return sessionStorage.getItem("loggedInUser")
-          }
+        ...mapState({
+            appData: (state) => state.appData,
+        })
     },
     components: {
         Survey

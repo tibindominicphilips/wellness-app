@@ -1,6 +1,5 @@
 import goTo from 'vuetify/es5/services/goto'
-import { mapActions } from "vuex";
-import { mapState } from 'vuex'
+import { mapActions, mapState } from "vuex";
 
 export default {
     computed: {
@@ -11,7 +10,6 @@ export default {
     components: {
     },
     methods: {
-
         ...mapActions(["updateQuestionnaire"]),
         scrollOption: function () {
             return {
