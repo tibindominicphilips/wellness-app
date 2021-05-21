@@ -1,0 +1,9 @@
+---
+applications:
+- name: wellnessapp
+  memory: 256M
+  instances: 1
+  version: 1.0.0
+  path: dist
+language: staticfile
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git 
