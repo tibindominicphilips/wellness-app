@@ -10,8 +10,12 @@ export default {
         Survey
     },
     methods: {
+        navigateToSurvey() {
+            this.displaySurvey = true;
+        }
     },
     data: () => ({
+        displaySurvey: false
     }),
 
     /* Lifecycle methods */
