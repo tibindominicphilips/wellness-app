@@ -1,11 +1,11 @@
 [
     {
         "label": "Terrible",
-        "value": -1
+        "value": -2
     },
     {
         "label": "Poor",
-        "value": -2
+        "value": -1
     },
     {
         "label": "Okay",
