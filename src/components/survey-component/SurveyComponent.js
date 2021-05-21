@@ -1,5 +1,3 @@
-
-
 import goTo from 'vuetify/es5/services/goto'
 import { mapActions } from "vuex";
 import { mapState } from 'vuex'
@@ -46,7 +44,7 @@ export default {
             goTo(0, this.scrollOption());
         },
         submit: function () {
-            console.log('Submitted values: ', this.categories)
+            this.$router.replace('/results');
         }
     },
     data: () => ({
