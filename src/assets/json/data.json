@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "name": "Mental and Emotional",
+        "questions": [
+            {
+                "id": 1,
+                "question": "I recognize when I am stressed and take steps to relax through exercise, quiet time, or other activities"
+            },
+            {
+                "id": 2,
+                "question": "I feel optimistic about the future / I am flexible and adapt or adjust to change in a positive way"
+            },
+            {
+                "id": 3,
+                "question": "I feel good about myself and believe others like me for who I am"
+            },
+            {
+                "id": 4,
+                "question": "I am interested in new things"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Physical",
+        "questions": [
+            {
+                "id": 5,
+                "question": "I engage in physical activities"
+            },
+            {
+                "id": 6,
+                "question": "I have proper diet and nutrition"
+            },
+            {
+                "id": 7,
+                "question": "I get 7-8 hours of sound sleep each night"
+            },
+            {
+                "id": 8,
+                "question": "I have lots of energy and can get through the day without being overly tired"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Social",
+        "questions": [
+            {
+                "id": 9,
+                "question": "I get along well with the members of my family"
+            },
+            {
+                "id": 10,
+                "question": "I participate in a wide variety of social activities and enjoy being with people who are different than me"
+            },
+            {
+                "id": 11,
+                "question": "I consider the feelings of others and do not act in hurtful or selfish ways"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Spiritual",
+        "questions": [
+            {
+                "id": 12,
+                "question": "I take time to enjoy nature and the beauty around me"
+            },
+            {
+                "id": 13,
+                "question": "I take time alone to think about what's important in life - who I am, what I value, where I fit in, and where I'm going"
+            },
+            {
+                "id": 14,
+                "question": "I engage in acts of caring and good will without expecting something in return"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Intellectual Health",
+        "questions": [
+            {
+                "id": 15,
+                "question": "I tend to act impulsively without thinking about the consequences"
+            },
+            {
+                "id": 16,
+                "question": "I learn from my mistakes and try to act differently the next time"
+            },
+            {
+                "id": 17,
+                "question": "I manage my time well, rather than time managing me"
+            }
+        ]
+    }
+]
