@@ -7,9 +7,11 @@
     <v-app-bar app color="primary" dark
       ><span class="c-p header-text">Wellness Assessment</span>
       <v-spacer> </v-spacer>
-      <v-app-bar-title class="pr-5 text-center">{{
-        entered_name
-      }}</v-app-bar-title>
+      <v-app-bar-title
+        class="pr-5 text-center"
+        v-if="appData && appData.userProfile && appData.userProfile.username"
+        >{{ appData.userProfile.username }}</v-app-bar-title
+      >
     </v-app-bar>
     <v-main>
       <v-container class="px-0" fluid>
@@ -31,9 +33,7 @@
               wish it would be). There is no "right" result, except the one that
               is most accurate for you. This tool will help you to develop an
               Individual Plan for Ehnanced Wellbeing that could dramatically
-              enhance your academic as well as life 
-              experience.
-            
+              enhance your academic as well as life experience.
             </h2>
             <v-spacer> </v-spacer>
             <v-btn

@@ -1,14 +1,16 @@
-
-
 import goTo from 'vuetify/es5/services/goto'
+import { mapActions, mapState } from "vuex";
 
 export default {
     computed: {
-
+        ...mapState({
+            categories: state => JSON.parse(JSON.stringify(state.questionnaire)),
+        })
     },
     components: {
     },
     methods: {
+        ...mapActions(["updateQuestionnaire"]),
         scrollOption: function () {
             return {
                 duration: 300,
@@ -25,6 +27,7 @@ export default {
             return (validCategoriesCount / this.categories.length) * 100;
         },
         change: function (questionIndex) {
+            this.updateQuestionnaire(this.categories)
             this.validateCategory();
             if (document.getElementById("qn" + this.selectedCategoryIndex + (questionIndex + 1))) {
                 goTo("#qn" + this.selectedCategoryIndex + (questionIndex + 1), this.scrollOption());
@@ -39,18 +42,23 @@ export default {
             goTo(0, this.scrollOption());
         },
         submit: function () {
-            console.log('Submitted values: ', this.categories)
+            this.$router.replace('/results');
         }
     },
     data: () => ({
-        categories: require('../../assets/json/data.json'),
         options: require('../../assets/json/options.json'),
         selectedCategoryIndex: 0
     }),
 
     /* Lifecycle methods */
+    beforeMount: function () {
+        this.updateQuestionnaire(require('../../assets/json/data.json'))
+    },
     mounted: function () {
         goTo(0);
+    },
+    updated: function () {
+        console.log('categoriesStore:', this.categories);
     },
 
 };
