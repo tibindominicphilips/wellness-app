@@ -12,7 +12,8 @@ const defaultState = {
 export const store = new Vuex.Store({
   state: defaultState,
   actions: rootAction,
-  mutations: rootMutation
+  mutations: rootMutation,
+  strict: true
 })
 
 export default store

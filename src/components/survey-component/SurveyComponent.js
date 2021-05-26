@@ -4,7 +4,7 @@ import { mapActions, mapState } from "vuex";
 export default {
     computed: {
         ...mapState({
-            categories: state => state.questionnaire,
+            categories: state => JSON.parse(JSON.stringify(state.questionnaire)),
         })
     },
     components: {
