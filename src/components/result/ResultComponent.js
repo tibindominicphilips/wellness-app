@@ -12,11 +12,10 @@ export default {
   data() {
         return {
           chartData: {
-            labels: ["2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09",
-              "2015-10", "2015-11", "2015-12"
+            labels: [
             ],
             datasets: [{
-              label: 'Bar Chart',
+              label: '',
               borderWidth: 1,
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -47,7 +46,7 @@ export default {
                 'rgba(255, 159, 64, 1)'
               ],
               pointBorderColor: '#2554FF',
-              data: [12, 19, 3, 5, 2, 3, 20, 3, 5, 6, 2, 1]
+              data: []
             }]
           },
           options: {
@@ -74,9 +73,22 @@ export default {
           }
         }
       },
- mounted: function () {
+      created() {
+        let chartLabel = [];
+        let resultData = [];
+        this.categories.forEach(element => {
+          chartLabel.push(element.name);
+          let sum = 0;
+          element.questions.forEach(question => {
+            sum = sum+ question.answer;
+          })
+          resultData.push(sum);
+        });
+          this.chartData.labels = chartLabel;
+          this.chartData.datasets[0].data = resultData;
+      },
+      mounted: function () {
         this.renderChart(this.chartData, this.options)
-        console.log('result page categories values from store:', this.categories);
     },
 
 };
