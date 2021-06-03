@@ -24,7 +24,7 @@ export default {
         },
         getProgress: function () {
             const validCategoriesCount = this.categories.reduce((count, category) => (category.isValid ? count + 1 : count), 0);
-            return (validCategoriesCount / this.categories.length) * 100;
+            this.progress = (validCategoriesCount / this.categories.length) * 100;
         },
         change: function (questionIndex) {
             this.updateQuestionnaire(this.categories)
@@ -36,18 +36,26 @@ export default {
         loadNextQn: function () {
             this.selectedCategoryIndex += 1;
             goTo(0, this.scrollOption());
+            this.getProgress();
         },
         loadPrevQn: function () {
             this.selectedCategoryIndex -= 1;
             goTo(0, this.scrollOption());
         },
         submit: function () {
-            this.$router.replace('/results');
+            this.isLoading = true;
+            this.getProgress();
+            setTimeout(() => {
+                this.isLoading = false;
+                this.$router.replace('/complete');
+            }, 300);
         }
     },
     data: () => ({
         options: require('../../assets/json/options.json'),
-        selectedCategoryIndex: 0
+        selectedCategoryIndex: 0,
+        progress: 0,
+        isLoading: false
     }),
 
     /* Lifecycle methods */
@@ -58,7 +66,6 @@ export default {
         goTo(0);
     },
     updated: function () {
-        console.log('categoriesStore:', this.categories);
     },
 
 };
