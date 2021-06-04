@@ -76,16 +76,19 @@ export default {
     created() {
         let chartLabel = [];
         let resultData = [];
+        let data = []
         this.categories.forEach(element => {
             chartLabel.push(element.name);
             let sum = 0;
             element.questions.forEach(question => {
                 sum = sum + question.answer;
             })
-            resultData.push(sum);
+            data.push({ category: element.name, value: Math.round((sum / element.questions.length) * 4) })
+            resultData.push(Math.round((sum / element.questions.length) * 4));
         });
         this.chartData.labels = chartLabel;
         this.chartData.datasets[0].data = resultData;
+        this.$emit('setChartData', data);
     },
     mounted: function () {
         this.renderChart(this.chartData, this.options)

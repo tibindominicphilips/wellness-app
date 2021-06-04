@@ -58,7 +58,7 @@
           lg="6"
           xl="6"
           sm="12"
-          class="ma-auto px-5"
+          class="ma-auto px-8"
           v-if="displaySurvey"
         >
           <Survey />

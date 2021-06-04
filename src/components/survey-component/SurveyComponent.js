@@ -47,7 +47,7 @@ export default {
             this.getProgress();
             setTimeout(() => {
                 this.isLoading = false;
-                this.$router.replace('/complete');
+                this.$router.replace('/results');
             }, 300);
         }
     },
