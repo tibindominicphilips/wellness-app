@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../components/home/Home.vue'
 import Login from '../components/login/Login'
 import Result from '../components/result/Result'
-import CompleteAssessment from '../components/complete-assessment/CompleteAssessment'
 
 Vue.use(VueRouter)
 
@@ -26,11 +25,6 @@ const routes = [
     path: '/results',
     name: 'Result',
     component: Result
-  },
-  {
-    path: '/complete',
-    name: 'CompleteAssessment',
-    component: CompleteAssessment
   },
   {
     path: '/about',

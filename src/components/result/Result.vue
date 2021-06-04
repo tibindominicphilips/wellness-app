@@ -25,7 +25,7 @@
       </p>
       <v-row class="justify-center">
         <v-col
-          class="col-md-3 d-flex"
+          class="col-md-4 d-flex"
           v-for="(strength, strengthIndex) in strengthAndWeakness.strengths"
           :key="strengthIndex"
         >
@@ -55,7 +55,7 @@
       <p class="text-center text-subtitle-1">Let's see what you can improve!</p>
       <v-row class="justify-center">
         <v-col
-          class="col-md-3 d-flex"
+          class="col-md-4 d-flex"
           v-for="(weakness, weaknessIndex) in strengthAndWeakness.weakness"
           :key="weaknessIndex"
         >
