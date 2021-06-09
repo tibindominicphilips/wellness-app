@@ -37,6 +37,7 @@
               color="secondary"
               @click="loadPrevQn()"
               v-if="selectedCategoryIndex !== 0"
+              :disabled="isLoading"
               >Previous</v-btn
             >
             <v-btn
@@ -44,23 +45,27 @@
               elevation="2"
               color="primary"
               @click="loadNextQn()"
-              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
+              :disabled="
+                !this.categories[this.selectedCategoryIndex].isValid ||
+                isLoading
+              "
               v-if="selectedCategoryIndex !== categories.length - 1"
               >Next</v-btn
             >
             <v-btn
               class="mx-2"
               elevation="2"
-              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
+              :disabled="
+                !this.categories[this.selectedCategoryIndex].isValid ||
+                isLoading
+              "
               color="primary"
               @click="submit()"
               v-if="selectedCategoryIndex == categories.length - 1"
               >Submit</v-btn
             >
             <div class="progressbar">
-              <v-progress-linear
-                v-bind:value="getProgress()"
-              ></v-progress-linear>
+              <v-progress-linear v-bind:value="progress"></v-progress-linear>
               <div style="clear: both"></div>
             </div>
           </div>
