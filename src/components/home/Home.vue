@@ -33,7 +33,7 @@
           class="ma-auto text-center"
           v-if="!displaySurvey"
         >
-          <h2 class="pa-6 text-align-justify">
+          <p class="pa-6 text-align-justify homePageText">
             Wellbeing is an essential component of excelling in academics and in
             life. Maintaining your wellbeing requires intentionality,
             reflection, and a committment to choosing thoughts and behaviors
@@ -43,7 +43,7 @@
             is most accurate for you. This tool will help you to develop an
             Individual Plan for Ehnanced Wellbeing that could dramatically
             enhance your academic as well as life experience.
-          </h2>
+          </p>
           <v-spacer> </v-spacer>
           <v-btn
             class="ma-2"
