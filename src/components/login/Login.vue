@@ -35,7 +35,7 @@
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :rules="inputRulesp"
-          id="username"
+          id="password"
           label="Password"
           v-model="password"
           solo

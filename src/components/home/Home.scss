@@ -9,3 +9,21 @@
 .header-text {
     font-size:$header-text-font-size
 }
+
+.menu_item{
+cursor: pointer;
+}
+.btn_icon{
+    margin-right: 0px;
+}
+.theme--light.v-list {
+    background-color: #1a3670;
+    padding: 0px;
+    margin: 0px;
+}
+.menu_content {
+    box-shadow: none;
+}
+.v-list-item {
+    min-height: 32px !important;
+}

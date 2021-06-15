@@ -7,11 +7,30 @@
     <v-app-bar app color="primary" dark
       ><span class="c-p header-text">Wellness Assessment</span>
       <v-spacer> </v-spacer>
-      <v-app-bar-title
-        class="pr-5 text-center"
+      <v-btn
+        class="text-center white--text px-0 btn_icon"
+        elevation="0"
+        color="primary"
         v-if="appData && appData.userProfile && appData.userProfile.username"
-        >{{ appData.userProfile.username }}</v-app-bar-title
-      >
+        >{{ appData.userProfile.username }}
+    </v-btn>
+        <v-menu :offset-y="offset" open-on-hover class="menu_content" :elevation="0">
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon  class="ml-2 mr-6" v-bind="attrs" dark v-on="on">
+              mdi-menu-down
+            </v-icon>
+          </template>
+        
+         <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index" 
+        >
+          <v-list-item-title elevation="0" class="menu_item white--text" @click="mainPage">{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+        </v-menu>
+  
     </v-app-bar>
     <v-main>
       <v-container class="px-0" fluid>
