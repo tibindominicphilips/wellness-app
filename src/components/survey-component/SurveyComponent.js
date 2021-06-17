@@ -5,7 +5,7 @@ export default {
     computed: {
         ...mapState({
             categories: state => JSON.parse(JSON.stringify(state.questionnaire)),
-        })
+        }),
     },
     components: {
     },
@@ -30,16 +30,27 @@ export default {
             this.updateQuestionnaire(this.categories)
             this.validateCategory();
             if (document.getElementById("qn" + this.selectedCategoryIndex + (questionIndex + 1))) {
-                goTo("#qn" + this.selectedCategoryIndex + (questionIndex + 1), this.scrollOption());
+                setTimeout(() => {
+                    goTo("#qn" + this.selectedCategoryIndex + (questionIndex + 1), this.scrollOption());
+                    this.activeQuestion = "qn" + this.selectedCategoryIndex + (questionIndex + 1)
+                }, 1000);
             }
+        },
+        getQuestionClass: function (value) {
+            return value !== this.activeQuestion ? "inActiveQuestion" : "";
+        },
+        setActiveQuestion: function (value) {
+            this.activeQuestion = value;
         },
         loadNextQn: function () {
             this.selectedCategoryIndex += 1;
+            this.setActiveQuestion("qn" + this.selectedCategoryIndex + 0);
             goTo(0, this.scrollOption());
             this.getProgress();
         },
         loadPrevQn: function () {
             this.selectedCategoryIndex -= 1;
+            this.setActiveQuestion("qn" + this.selectedCategoryIndex + 0);
             goTo(0, this.scrollOption());
         },
         submit: function () {
@@ -54,6 +65,7 @@ export default {
     data: () => ({
         options: require('../../assets/json/options.json'),
         selectedCategoryIndex: 0,
+        activeQuestion: "qn00",
         progress: 0,
         isLoading: false
     }),

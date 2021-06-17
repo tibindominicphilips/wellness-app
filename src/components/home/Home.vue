@@ -55,7 +55,7 @@
         </v-col>
         <v-col
           md="12"
-          lg="6"
+          lg="8"
           xl="6"
           sm="12"
           class="ma-auto px-8"

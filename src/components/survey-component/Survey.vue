@@ -1,9 +1,9 @@
-<style lang="scss" >
+<style lang="scss">
 @import "../../assets/scss/variables.scss";
 @import "./Survey.scss";
 </style>
 <template>
-  <div>
+  <div class="surveyComponent">
     <v-card elevation="2" class="ma-auto">
       <div class="pa-5">
         <h1 class="font-weight-medium mb-10 mt-5">
@@ -16,6 +16,9 @@
             ].questions"
             :key="question.id"
             v-bind:id="'qn' + selectedCategoryIndex + questionIndex"
+            v-bind:class="
+              getQuestionClass('qn' + selectedCategoryIndex + questionIndex)
+            "
           >
             <v-radio-group
               class="questions"
