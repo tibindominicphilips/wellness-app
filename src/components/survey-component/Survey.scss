@@ -1,4 +1,12 @@
 .surveyComponent{
+    button{
+    &.primaryButton{
+        @include primaryButton;
+    }
+    &.secondaryButton{
+        @include secondaryButton;
+    }
+}
     .v-input--radio-group legend.v-label {
         font-weight: 500 !important;
         color: #212121 !important;
@@ -6,8 +14,7 @@
         padding-bottom: 15px !important;
     }
     .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
-        // background-color: rgba(172, 181, 191, 0.1);
-        box-shadow: rgb(172 181 191 / 80%) 0px 0px 0px 2px inset;
+        border: 1px solid rgba(33,33,33,.3) !important;
         font-weight: 500;
         padding: 10px;
         right: auto;
@@ -18,11 +25,8 @@
         display: block !important;
         float: left !important;
     }
-    // .inActiveQuestion {
-    //     opacity: .3;
-    // }
     .v-item--active .v-label{
-        background-color: black !important;
+        background-color: #1a3670 !important;
         font-weight: bold !important;
         color: white !important;
         animation: blinker 1s linear 200ms !important;

@@ -18,6 +18,18 @@ export default {
                 easing: 'linear',
             }
         },
+        getScreenWidth: function () {
+            return (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        },
+        scrollTo: function (postion, options) {
+            if (options) {
+                if (this.getScreenWidth() <= 810) {
+                    goTo(postion, this.scrollOption());
+                }
+            } else {
+                goTo(postion);
+            }
+        },
         validateCategory: function () {
             const questionIndex = this.categories[this.selectedCategoryIndex].questions.findIndex(question => question.answer === undefined);
             this.categories[this.selectedCategoryIndex].isValid = (questionIndex === -1) ? true : false;
@@ -31,7 +43,7 @@ export default {
             this.validateCategory();
             if (document.getElementById("qn" + this.selectedCategoryIndex + (questionIndex + 1))) {
                 setTimeout(() => {
-                    goTo("#qn" + this.selectedCategoryIndex + (questionIndex + 1), this.scrollOption());
+                    this.scrollTo("#qn" + this.selectedCategoryIndex + (questionIndex + 1), this.scrollOption());
                     this.activeQuestion = "qn" + this.selectedCategoryIndex + (questionIndex + 1)
                 }, 1000);
             }

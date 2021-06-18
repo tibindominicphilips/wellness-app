@@ -36,17 +36,15 @@
           </div>
           <div class="text-center mt-5 pb-0 actionButtonGroup">
             <v-btn
-              elevation="2"
-              color="secondary"
+              class="secondaryButton"
               @click="loadPrevQn()"
               v-if="selectedCategoryIndex !== 0"
               :disabled="isLoading"
               >Previous</v-btn
             >
             <v-btn
-              class="mx-2"
+              class="mx-2 primaryButton"
               elevation="2"
-              color="primary"
               @click="loadNextQn()"
               :disabled="
                 !this.categories[this.selectedCategoryIndex].isValid ||
@@ -56,13 +54,12 @@
               >Next</v-btn
             >
             <v-btn
-              class="mx-2"
+              class="mx-2 primaryButton"
               elevation="2"
               :disabled="
                 !this.categories[this.selectedCategoryIndex].isValid ||
                 isLoading
               "
-              color="primary"
               @click="submit()"
               v-if="selectedCategoryIndex == categories.length - 1"
               >Submit</v-btn

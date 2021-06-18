@@ -45,11 +45,7 @@
             enhance your academic as well as life experience.
           </p>
           <v-spacer> </v-spacer>
-          <v-btn
-            class="ma-2"
-            elevation="2"
-            color="primary"
-            @click="navigateToSurvey()"
+          <v-btn class="ma-2 primaryButton" @click="navigateToSurvey()"
             >I am ready. Let's Start</v-btn
           >
         </v-col>
