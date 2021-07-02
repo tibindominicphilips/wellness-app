@@ -33,7 +33,7 @@
           class="ma-auto text-center"
           v-if="!displaySurvey"
         >
-          <h2 class="pa-6 text-align-justify">
+          <p class="pa-6 text-align-justify homePageText">
             Wellbeing is an essential component of excelling in academics and in
             life. Maintaining your wellbeing requires intentionality,
             reflection, and a committment to choosing thoughts and behaviors
@@ -43,19 +43,15 @@
             is most accurate for you. This tool will help you to develop an
             Individual Plan for Ehnanced Wellbeing that could dramatically
             enhance your academic as well as life experience.
-          </h2>
+          </p>
           <v-spacer> </v-spacer>
-          <v-btn
-            class="ma-2"
-            elevation="2"
-            color="primary"
-            @click="navigateToSurvey()"
+          <v-btn class="ma-2 primaryButton" @click="navigateToSurvey()"
             >I am ready. Let's Start</v-btn
           >
         </v-col>
         <v-col
           md="12"
-          lg="6"
+          lg="8"
           xl="6"
           sm="12"
           class="ma-auto px-8"

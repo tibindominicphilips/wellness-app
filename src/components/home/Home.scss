@@ -14,3 +14,11 @@
     margin: auto;
     height: 38vh;
 }
+
+.homePageText{
+    font-size: 18px;
+    font-weight: 500;
+}
+.primaryButton{
+    @include primaryButton;
+}

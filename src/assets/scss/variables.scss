@@ -1,2 +1,41 @@
 $blue: #1a3670; // Header bg
+$white:#fff;
 $header-text-font-size: 1.25rem !important;
+$primaryBgColor: #176498 !important;
+$secondaryBgColor: #bfe2eb !important;
+
+@mixin button {
+    border: none;
+    border-radius: .125em;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1em;
+    min-height: 2.5em;
+    padding: 0 1em;
+    box-shadow: none !important;
+}
+@mixin primaryButton {
+  @include button;
+  background: #1474a4 !important;  
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: $white !important;
+  text-transform: none !important;
+  &.v-btn.v-btn--disabled.v-btn--has-bg {
+    background-color: rgba(20,116,164,.35) !important;
+    color: rgba(255,255,255,.5) !important;
+  }
+}
+
+@mixin secondaryButton {
+  @include button;
+  background: #bfe2eb !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #1c2d66 !important;
+  text-transform: none !important;
+  &.v-btn.v-btn--disabled.v-btn--has-bg {
+    background-color: rgba(191,226,235,.5) !important;
+    color: rgba(28,45,102,.5) !important;
+  }
+}
