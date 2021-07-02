@@ -1,31 +1,91 @@
-.v-input--radio-group legend.v-label {
-    font-weight: 500 !important;
-    color: #212121 !important;
-    font-size: 16px !important;
-}
-
-.progressbar {
-    padding: 15px 0px;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    .v-progress-linear{
-        border-radius: 4px;
-        height: 8px !important;
-        width: 80%;
-        margin: auto;
+.surveyComponent{
+    button{
+    &.primaryButton{
+        @include primaryButton;
+    }
+    &.secondaryButton{
+        @include secondaryButton;
     }
 }
-.actionButtonGroup {
-    position: fixed !important;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    background-color: #ededec;
-    border: solid 1px #d6d6d6;
-    padding: 10px;
+    .v-input--radio-group legend.v-label {
+        font-weight: 500 !important;
+        color: #212121 !important;
+        font-size: 16px !important;
+        padding-bottom: 15px !important;
+    }
+    .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
+        border: 1px solid rgba(33,33,33,.3) !important;
+        font-weight: 500;
+        padding: 10px;
+        right: auto;
+        position: relative;
+        min-width: 8rem;
+        flex: none !important;
+        border-radius: 5px;
+        display: block !important;
+        float: left !important;
+    }
+    .v-item--active .v-label{
+        background-color: #1474a4 !important;
+        font-weight: bold !important;
+        color: white !important;
+        animation: blinker 1s linear 200ms !important;
+    }
+
+    @keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+    }
+    .v-input--selection-controls .v-input__slot, .v-input--selection-controls .v-radio{
+        width: fit-content;
+        float: left !important;
+        margin-right: 10px;
+        display: block;
+    }
+    .v-input--radio-group__input{
+        display: block !important;
+    }
+    .v-item--active .v-label:after {
+        content: "✔";
+        position: absolute;
+        right: 20px;
+    }
+    .v-input--selection-controls__input{
+        display: none !important;
+    }
+    .progressbar {
+        padding: 15px 0px;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        .v-progress-linear{
+            border-radius: 4px;
+            height: 8px !important;
+            width: 80%;
+            margin: auto;
+        }
+    }
+    .actionButtonGroup {
+        position: fixed !important;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        background-color: #ededec;
+        border: solid 1px #d6d6d6;
+        padding: 10px;
+    }
 }
 ::-webkit-scrollbar {
     width: 0 !important;
     background: transparent !important;
+}
+
+@media only screen and (max-width: 810px) {
+   .v-input--selection-controls .v-input__slot, .v-input--selection-controls .v-radio{
+       width: 100% !important;
+   }
+   label {
+           width: 50% !important;
+       }
 }

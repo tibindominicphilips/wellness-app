@@ -1,9 +1,9 @@
-<style lang="scss" >
+<style lang="scss">
 @import "../../assets/scss/variables.scss";
 @import "./Survey.scss";
 </style>
 <template>
-  <div>
+  <div class="surveyComponent">
     <v-card elevation="2" class="ma-auto">
       <div class="pa-5">
         <h1 class="font-weight-medium mb-10 mt-5">
@@ -16,6 +16,9 @@
             ].questions"
             :key="question.id"
             v-bind:id="'qn' + selectedCategoryIndex + questionIndex"
+            v-bind:class="
+              getQuestionClass('qn' + selectedCategoryIndex + questionIndex)
+            "
           >
             <v-radio-group
               class="questions"
@@ -33,34 +36,36 @@
           </div>
           <div class="text-center mt-5 pb-0 actionButtonGroup">
             <v-btn
-              elevation="2"
-              color="secondary"
+              class="secondaryButton"
               @click="loadPrevQn()"
               v-if="selectedCategoryIndex !== 0"
+              :disabled="isLoading"
               >Previous</v-btn
             >
             <v-btn
-              class="mx-2"
+              class="mx-2 primaryButton"
               elevation="2"
-              color="primary"
               @click="loadNextQn()"
-              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
+              :disabled="
+                !this.categories[this.selectedCategoryIndex].isValid ||
+                isLoading
+              "
               v-if="selectedCategoryIndex !== categories.length - 1"
               >Next</v-btn
             >
             <v-btn
-              class="mx-2"
+              class="mx-2 primaryButton"
               elevation="2"
-              :disabled="!this.categories[this.selectedCategoryIndex].isValid"
-              color="primary"
+              :disabled="
+                !this.categories[this.selectedCategoryIndex].isValid ||
+                isLoading
+              "
               @click="submit()"
               v-if="selectedCategoryIndex == categories.length - 1"
               >Submit</v-btn
             >
             <div class="progressbar">
-              <v-progress-linear
-                v-bind:value="getProgress()"
-              ></v-progress-linear>
+              <v-progress-linear v-bind:value="progress"></v-progress-linear>
               <div style="clear: both"></div>
             </div>
           </div>

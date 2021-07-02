@@ -2,7 +2,15 @@
   <v-container class="loginbackground" fluid>
     <div class="py-13"></div>
     <div
-      class="d-flex flex-column justify-space-between align-center py-15 mb-15 mt-4"
+      class="
+        d-flex
+        flex-column
+        justify-space-between
+        align-center
+        py-15
+        mb-15
+        mt-4
+      "
     >
       <v-img src="../../assets/images/logo.svg"></v-img>
     </div>
@@ -16,7 +24,13 @@
     <div class="second py-15">
       <v-form
         name="login-form"
-        class="pt-login-form d-flex flex-column justify-space-between align-center"
+        class="
+          pt-login-form
+          d-flex
+          flex-column
+          justify-space-between
+          align-center
+        "
         v-model="isValid"
       >
         <v-text-field
@@ -68,8 +82,10 @@
 
 <script>
 import { mapActions } from "vuex";
+import mixin from "../shared/mixin.js";
 
 export default {
+  mixins: [mixin],
   data: () => ({
     isValid: false,
     name: "",
@@ -83,17 +99,13 @@ export default {
       (v) => !!v || "Name is required",
       // v => (v && v.length >= 6) || 'Name must be greater than 5 characters',
     ],
-    inputRulesp: [
-      (v) => !!v || "Password is required",
-      (v) =>
-        (v && v.length >= 3) || "Password must be greater than 3 characters",
-    ],
   }),
   computed: {},
 
   methods: {
     ...mapActions(["updateUserProfile"]),
     submitForm(e) {
+      console.log("component submit called");
       e.preventDefault();
       if (this.password === "#Welcome123") {
         let userProfile = { username: this.name };
@@ -103,6 +115,9 @@ export default {
         this.loginError = "Please enter a valid password";
       }
     },
+  },
+  created: function () {
+    console.log("Component created and loaded");
   },
 };
 </script>

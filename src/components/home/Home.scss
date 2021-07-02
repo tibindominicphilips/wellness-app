@@ -27,3 +27,15 @@ cursor: pointer;
 .v-list-item {
     min-height: 32px !important;
 }
+.homeimage{
+    margin: auto;
+    height: 38vh;
+}
+
+.homePageText{
+    font-size: 18px;
+    font-weight: 500;
+}
+.primaryButton{
+    @include primaryButton;
+}
