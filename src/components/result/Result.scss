@@ -2,3 +2,36 @@
     width: 100%;
     background-color: $blue;
 }
+.header-color {
+    color: #0095c7
+}
+li.subtitle-1 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.result-section {
+    background-color: #eaf5f8;
+}
+.goodResultSection {
+    border:rgba(75, 192, 192, 1);
+    background-color: rgba(75, 192, 192, 0.2);
+}
+.averageResultSection {
+    border:rgba(255, 206, 86, 1);
+    background-color: rgba(255, 206, 86, 0.2);
+}
+.poorResultSection {
+    border:rgba(255,99,132,1);
+    background-color: rgba(255, 99, 132, 0.2);
+}
+.result-message-div {
+    height:25px;
+    width:25px;
+    display: inline-block;
+    top: 8px;
+    position: relative;
+    right: 8px;
+}
+.result-contianer {
+    background-color: #fff;;
+}

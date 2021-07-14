@@ -1,8 +1,9 @@
-$blue: #1a3670; // Header bg
+$blue: #2b86b2; // Header bg
 $white:#fff;
-$header-text-font-size: 1.25rem !important;
+$header-text-font-size: 2rem !important;
 $primaryBgColor: #176498 !important;
 $secondaryBgColor: #bfe2eb !important;
+$containerBgColor: #f0f8fa !important;
 
 @mixin button {
     border: none;

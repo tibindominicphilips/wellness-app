@@ -14,10 +14,6 @@
             {
                 "id": 3,
                 "question": "I feel good about myself and believe others like me for who I am"
-            },
-            {
-                "id": 4,
-                "question": "I am interested in new things"
             }
         ]
     },
@@ -26,19 +22,15 @@
         "name": "Physical",
         "questions": [
             {
+                "id": 4,
+                "question": "I engage in physical activities & have proper diet and nutrition"
+            },
+            {
                 "id": 5,
-                "question": "I engage in physical activities"
-            },
-            {
-                "id": 6,
-                "question": "I have proper diet and nutrition"
-            },
-            {
-                "id": 7,
                 "question": "I get 7-8 hours of sound sleep each night"
             },
             {
-                "id": 8,
+                "id": 6,
                 "question": "I have lots of energy and can get through the day without being overly tired"
             }
         ]
@@ -48,15 +40,15 @@
         "name": "Social",
         "questions": [
             {
-                "id": 9,
+                "id": 7,
                 "question": "I get along well with the members of my family"
             },
             {
-                "id": 10,
+                "id": 8,
                 "question": "I participate in a wide variety of social activities and enjoy being with people who are different than me"
             },
             {
-                "id": 11,
+                "id": 9,
                 "question": "I consider the feelings of others and do not act in hurtful or selfish ways"
             }
         ]
@@ -66,15 +58,15 @@
         "name": "Spiritual",
         "questions": [
             {
-                "id": 12,
+                "id": 10,
                 "question": "I take time to enjoy nature and the beauty around me"
             },
             {
-                "id": 13,
+                "id": 11,
                 "question": "I take time alone to think about what's important in life - who I am, what I value, where I fit in, and where I'm going"
             },
             {
-                "id": 14,
+                "id": 12,
                 "question": "I engage in acts of caring and good will without expecting something in return"
             }
         ]
@@ -84,15 +76,15 @@
         "name": "Intellectual Health",
         "questions": [
             {
-                "id": 15,
+                "id": 13,
                 "question": "I tend to act impulsively without thinking about the consequences"
             },
             {
-                "id": 16,
+                "id": 14,
                 "question": "I learn from my mistakes and try to act differently the next time"
             },
             {
-                "id": 17,
+                "id": 15,
                 "question": "I manage my time well, rather than time managing me"
             }
         ]

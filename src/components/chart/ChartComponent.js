@@ -17,34 +17,8 @@ export default {
                 datasets: [{
                     label: '',
                     borderWidth: 1,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
+                    backgroundColor: [],
+                    borderColor: [],
                     pointBorderColor: '#2554FF',
                     data: []
                 }]
@@ -76,18 +50,37 @@ export default {
     created() {
         let chartLabel = [];
         let resultData = [];
-        let data = []
+        let data = [];
+        let bgColorList = [];
+        let borderColorList = [];
         this.categories.forEach(element => {
             chartLabel.push(element.name);
             let sum = 0;
+            let bgColor = "";
+            let borderColor = "";
             element.questions.forEach(question => {
                 sum = sum + question.answer;
             })
-            data.push({ category: element.name, value: Math.round((sum / element.questions.length) * 4) })
-            resultData.push(Math.round((sum / element.questions.length) * 4));
+            let totalValue = Math.round((sum / element.questions.length) * 4)
+            data.push({ category: element.name, value: totalValue })
+            if (totalValue >= 12) {
+             bgColor = "rgba(75, 192, 192, 0.2)";
+             borderColor = "rgba(75, 192, 192, 1)";
+            }else if (totalValue > 8 & totalValue < 12) {
+                bgColor = "rgba(255, 206, 86, 0.2)";
+                borderColor = "rgba(255, 206, 86, 1)";
+            }else {
+                bgColor = "rgba(255, 99, 132, 0.2)";
+                borderColor = "rgba(255,99,132,1)";
+            }
+            resultData.push(totalValue);
+            bgColorList.push(bgColor);
+            borderColorList.push(borderColor);
         });
         this.chartData.labels = chartLabel;
         this.chartData.datasets[0].data = resultData;
+        this.chartData.datasets[0].backgroundColor = bgColorList;
+        this.chartData.datasets[0].borderColor = borderColorList;
         this.$emit('setChartData', data);
     },
     mounted: function () {

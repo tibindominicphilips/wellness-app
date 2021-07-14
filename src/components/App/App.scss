@@ -13,3 +13,6 @@ font-size:$header-text-font-size
 .text-align-justify{
     text-align: justify !important;
 }
+.theme--light.v-application {
+    background: $containerBgColor;
+}
