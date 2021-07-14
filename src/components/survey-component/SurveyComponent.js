@@ -70,7 +70,8 @@ export default {
             this.getProgress();
             setTimeout(() => {
                 this.isLoading = false;
-                this.$router.replace('/results');
+                this.$emit('calculateAndDisplayResult', true);
+               // this.$router.replace('/results');
             }, 300);
         }
     },

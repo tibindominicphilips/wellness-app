@@ -1,6 +1,6 @@
 <template>
   <v-container class="loginbackground" fluid>
-    <div class="py-13"></div>
+    <div class="py-11"></div>
     <div
       class="
         d-flex
@@ -8,7 +8,7 @@
         justify-space-between
         align-center
         py-15
-        mb-15
+        mb-12
         mt-4
       "
     >
@@ -16,7 +16,7 @@
     </div>
     <div
       id="appTitle"
-      class="align-center d-flex flex-column justify-space-between pt-15"
+      class="align-center d-flex flex-column justify-space-between pt-11"
     >
       <h1 class="white--text font-weight-light">{{ appName }}</h1>
     </div>

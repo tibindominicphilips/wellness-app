@@ -1,22 +1,22 @@
 [
     {
-        "label": "Terrible",
+        "label": " Never",
         "value": 1
     },
     {
-        "label": "Poor",
+        "label": "Rarely",
         "value": 2
     },
     {
-        "label": "Okay",
+        "label": "Sometimes",
         "value": 3
     },
     {
-        "label": "Good",
+        "label": "Often",
         "value": 4
     },
     {
-        "label": "Great",
+        "label": "Always",
         "value": 5
     }
 ]
