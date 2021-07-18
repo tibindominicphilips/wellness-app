@@ -1,5 +1,5 @@
 
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import Chart from '../chart/Chart'
 import physicalImage from '@/assets/images/physical.jpg'
 import mentalImage from '@/assets/images/mental.jpg'
@@ -17,8 +17,13 @@ export default {
     Chart
   },
   methods: {
+    ...mapActions(["updateQuestionnaire"]),
     setChartData: function (chartData) {
       this.getStrengthAndWeakness(chartData)
+    },
+    backToHome: function () {
+      this.updateQuestionnaire([]);
+      this.$emit('backToHome');
     },
     getStrengthDescription: function (category) {
       return this.descriptionData.find(description => description.category === category).StrengthDescription;

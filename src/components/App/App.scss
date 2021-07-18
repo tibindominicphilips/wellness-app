@@ -1,3 +1,18 @@
+@import "../../assets/scss/variables.scss";
+
+body{
+    font-family: centrale_sans !important;
+    .v-application{
+        font-family: centrale_sans !important;
+        .text-subtitle-1,.title,.subtitle-1,.v-application .display-1{
+            font-family: centrale_sans !important;
+        }
+    }
+}
+
+.v-input input {
+    color: #212121 !important
+}         
 .v-application .primary {
     background-color: $blue !important;
 }

@@ -5,7 +5,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <span class="c-p header-text">Wellness Assessment</span>
+      <span class="c-p header-text dls-font-bold">Wellness Assessment</span>
       <v-spacer> </v-spacer>
       <v-btn
         class="text-center white--text px-0 btn_icon"
@@ -91,7 +91,7 @@
           class="ma-auto px-8"
           v-if="displayResult"
         >
-          <Result />
+          <Result @backToHome="backToHome" />
         </v-col>
       </v-container>
     </v-main>

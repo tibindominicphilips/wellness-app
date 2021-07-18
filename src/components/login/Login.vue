@@ -39,6 +39,7 @@
           id="username"
           v-model="name"
           label="User Name"
+          placeholder="User Name"
           solo
           class="form-input"
         >
@@ -51,6 +52,7 @@
           :rules="inputRulesp"
           id="password"
           label="Password"
+          placeholder="Password"
           v-model="password"
           solo
           class="form-input"
@@ -103,12 +105,12 @@ export default {
   computed: {},
 
   methods: {
-    ...mapActions(["updateUserProfile"]),
+    ...mapActions(["updateUserProfile", "updateQuestionnaire"]),
     submitForm(e) {
       console.log("component submit called");
       e.preventDefault();
       if (this.password === "#Welcome123") {
-        let userProfile = { username: this.name };
+        let userProfile = { username: this.name, authenticated: true };
         this.updateUserProfile(userProfile);
         this.$router.replace("/home");
       } else {
@@ -117,7 +119,9 @@ export default {
     },
   },
   created: function () {
-    console.log("Component created and loaded");
+    let userProfile = { username: "", authenticated: false };
+    this.updateUserProfile(userProfile);
+    this.updateQuestionnaire([]);
   },
 };
 </script>

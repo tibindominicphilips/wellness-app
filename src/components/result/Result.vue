@@ -130,7 +130,7 @@
       </ul>
     </v-row>
     <v-col class="text-center mb-5">
-      <v-btn color="primary" to="/home">Take assessment again</v-btn>
+      <v-btn color="primary" @click="backToHome()">Take assessment again</v-btn>
     </v-col>
     <v-col class="text-center mb-5">
       <h1>Need more help?</h1>
