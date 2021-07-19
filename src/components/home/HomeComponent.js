@@ -13,30 +13,38 @@ export default {
         Result
     },
     methods: {
-        ...mapActions(["updateUserProfile"]),
+        ...mapActions(["updateUserProfile", "updateQuestionnaire"]),
         navigateToSurvey() {
             this.displaySurvey = true;
         },
-        mainPage(){
+        mainPage() {
             this.$router.replace("/login");
-            let userProfile = { username: '' };
+            let userProfile = { username: '', authenticated: false };
             this.updateUserProfile(userProfile);
         },
         calculateAndDisplayResult() {
             this.displaySurvey = false;
             this.displayResult = true;
+        },
+        backToHome() {
+            this.displaySurvey = false;
+            this.displayResult = false;
         }
-          },
+    },
     data: () => ({
         displaySurvey: false,
         displayResult: false,
         items: [
-       { title: 'Logout' }
+            { title: 'Logout' }
         ],
-        offset: true  
+        offset: true
     }),
 
     /* Lifecycle methods */
     created: function () {
+        if (!(!!this.appData && !!this.appData.userProfile && !!this.appData.userProfile.authenticated)) {
+            this.mainPage();
+        }
+        this.updateQuestionnaire([])
     },
 };

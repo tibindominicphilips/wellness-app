@@ -4,6 +4,10 @@ $header-text-font-size: 2rem !important;
 $primaryBgColor: #176498 !important;
 $secondaryBgColor: #bfe2eb !important;
 $containerBgColor: #f0f8fa !important;
+$placeholder-text-color: #8c8c8c;
+$input-text-color: #212121;
+$input-bg-color: #f0f8fa;
+
 
 @mixin button {
     border: none;
@@ -39,4 +43,157 @@ $containerBgColor: #f0f8fa !important;
     background-color: rgba(191,226,235,.5) !important;
     color: rgba(28,45,102,.5) !important;
   }
+}
+.v-text-field.v-text-field--solo .v-input__control {
+  input {
+    font: 400 normal 1rem / 1.375rem centrale_sans !important;
+    color: $input-text-color !important;
+    background-color: $input-bg-color;
+    border-radius: 2px !important;
+  }
+  input:focus {
+    background-color: $white !important;
+  }
+}
+
+/* 
+  ** Fonts **
+
+  Font-family is controlled using the font-weight. For example, setting a font-weight of 700 will result in Central Sans Bold.
+
+  Central Sans Thin - font-weight of 100
+  Central Sans Light - font-weight of 300
+  Central Sans Book - font-weight of 400 (default)
+  Central Sans Medium - font-weight of 500
+  Central Sans Bold - font-weight of 700
+  Central Sans XBold - font-weight of 800
+
+*/
+
+.dls-font-thin {
+  font-weight: 100 !important;
+}
+
+.dls-font-light {
+  font-weight: 300 !important;
+}
+
+.dls-font-book {
+  font-weight: 400 !important;
+}
+
+.dls-font-medium {
+  font-weight: 500 !important;
+}
+
+.dls-font-bold {
+  font-weight: 700 !important;
+}
+
+.dls-font-thin {
+  font-weight: 100 !important;
+}
+
+.dls-font-xbold {
+  font-weight: 800 !important;
+}
+
+.dls-font-xbold {
+  font-weight: 800 !important;
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Thin.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-ThinItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Light.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-LightItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Book.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-BookItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-BookItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Medium.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-MediumItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Bold.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-BoldItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-XBold.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-XBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: centrale_sans;
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-XBoldItalic.woff2") format("woff2"), url("~@/assets/philips-dls/assets/fonts/centrale-3.0.0-latin/CentraleSans-XBoldItalic.woff") format("woff");
 }

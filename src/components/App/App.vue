@@ -1,5 +1,4 @@
 <style lang="scss" >
-@import "../../assets/scss/variables.scss";
 @import "App.scss";
 </style>
 <template>
