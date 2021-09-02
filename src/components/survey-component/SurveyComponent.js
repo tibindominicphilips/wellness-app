@@ -1,5 +1,6 @@
 import goTo from 'vuetify/es5/services/goto'
 import { mapActions, mapState } from "vuex";
+import axios from 'axios'
 
 export default {
     computed: {
@@ -54,6 +55,29 @@ export default {
         setActiveQuestion: function (value) {
             this.activeQuestion = value;
         },
+        getOptions:function(){
+            axios.get('http://localhost:8005/api/options').then(res=>{
+                if(!!res.data && res.data.length){
+                    this.options=res.data;
+                } else {
+                    this.options=[];
+                }
+            }).catch(()=>{
+                this.options=[];       
+            })
+        },
+        getQuestions:function(){
+            axios.get('http://localhost:8005/api/sections').then(res=>{
+                if(!!res.data && res.data.length){
+                    var data = res.data.map(el=>{return {id:el.id,name:el.name,questions:el.Questions}})
+                    this.updateQuestionnaire(data)
+                } else {
+                    this.updateQuestionnaire([])
+                }
+            }).catch(()=>{
+                this.updateQuestionnaire([])        
+            })
+        },
         loadNextQn: function () {
             this.selectedCategoryIndex += 1;
             this.setActiveQuestion("qn" + this.selectedCategoryIndex + 0);
@@ -76,7 +100,7 @@ export default {
         }
     },
     data: () => ({
-        options: require('../../assets/json/options.json'),
+        options: [],
         selectedCategoryIndex: 0,
         activeQuestion: "qn00",
         progress: 0,
@@ -85,7 +109,8 @@ export default {
 
     /* Lifecycle methods */
     beforeMount: function () {
-        this.updateQuestionnaire(require('../../assets/json/data.json'))
+        this.getOptions();
+        this.getQuestions();
     },
     mounted: function () {
         goTo(0);
